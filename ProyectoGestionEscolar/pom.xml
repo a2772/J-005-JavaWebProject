@@ -28,7 +28,7 @@
                     <archive>
                         <manifest>
                             <!-- give full qualified name of your main class-->
-                            <mainClass>mx.com.upiicsa.ipn.proyectogestionescolar.test.TestClass</mainClass>
+                            <mainClass>mx.com.upiicsa.ipn.proyectogestionescolar.business.alumno.AlumnoBs</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

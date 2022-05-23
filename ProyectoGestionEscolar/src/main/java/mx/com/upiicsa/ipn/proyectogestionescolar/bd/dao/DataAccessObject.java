@@ -16,12 +16,23 @@ public class DataAccessObject {
     protected static final String PASSWORD = Conexion.MySQL.getPassword();
     protected Connection connection = null;
     
+    /**
+     * Abre la conexión
+     * @throws ClassNotFoundException
+     * @throws SQLException 
+     */
     public DataAccessObject() throws ClassNotFoundException, SQLException {
         Class.forName(DRIVER);
         connection = DriverManager.getConnection(URL, USER, PASSWORD);
         System.out.println("CONEXIÓN ABIERTA");
     }
-
+    
+    /**
+     * Crea Statement
+     * @return
+     * @throws SQLException
+     * @throws DAOInitializationException 
+     */
     public Statement createStatement() throws SQLException, DAOInitializationException {
         if (connection == null || connection.isClosed()) {
             throw new DAOInitializationException("ERROR. El DAO fue cerrado previamente.");
@@ -30,6 +41,13 @@ public class DataAccessObject {
         }
     }
     
+    /**
+     * Prepared Statement
+     * @param sql
+     * @return
+     * @throws SQLException
+     * @throws DAOInitializationException 
+     */
     public PreparedStatement prepareStatement(String sql) throws SQLException, DAOInitializationException {
         if (connection == null || connection.isClosed()) {
             throw new DAOInitializationException("ERROR. El DAO fue cerrado previamente.");
