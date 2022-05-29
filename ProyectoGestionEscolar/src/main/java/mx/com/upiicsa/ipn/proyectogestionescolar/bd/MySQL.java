@@ -1,5 +1,5 @@
 package mx.com.upiicsa.ipn.proyectogestionescolar.bd;
 
-public class MySQL {
-    
+public staic final class MySQL {
+    public static final
 }
